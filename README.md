@@ -1,5 +1,5 @@
 # react-expenses-tracking-app
 React expenses tracking tutorial app
 
-<img alt="1" src="https://github.com/user-attachments/assets/0456b212-a894-45e9-b450-084c7b4085c4" />
-<img alt="2" src="https://github.com/user-attachments/assets/6726be7f-b52f-43bc-b26a-f114aa008fa1" />
+<img height="700" alt="1212" src="https://github.com/user-attachments/assets/5a3351f6-da83-4a51-9746-e751b95c6a34" />
+<img height="700" alt="12" src="https://github.com/user-attachments/assets/07b3ce06-ed67-406a-83c0-8751f0edd6b4" />
