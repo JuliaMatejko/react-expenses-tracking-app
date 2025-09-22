@@ -1,4 +1,5 @@
-import React, { useState } from "react"; //not necessary in the newest version of react. Need to use import in every component in older versions whre JSX code is used
+import { useState } from "react";
+import './App.css'; 
 
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
@@ -111,48 +112,19 @@ const DUMMY_EXPENSES = [
 function App() {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
-  // reaact function component
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
     });
   };
 
-  // Imperative (vanilla JS)...
-  //(writing step by step what the program should do, getting DOM elemenmts and changing them etc.)
-
-  //const para = document.createElement('p');
-  //para.textContent = 'This is also visible!';
-  //document.getElementById('root').append(para);
-
-  //... vs Declarative (React) approach
-  //(definig end state of the program, and letting React library generate steps to get to end result)
-
   return (
-    // JSX syntax - JavaScript XML
-    // With React, we can use imported ExpenseItem component as html element.
-    // Custom components MUST statr with upper case character !!!
-
-    //Setting atributes and sending them to the ExpenseItem component.
-    //Those atributes can be accessed in ExpenseItem by props parameter(can be named however, byt this is convention)
-    <div>
+    <div className="app-container">
+      <div className="background-container"></div>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
-
-  // alternative way, without using JSX syntax - under ythe hood JSX code is transfomed to this
-  //return React.createElement(                   // creating element using method from exported react package library
-  //'div',    // 1st argument - element type
-  //{},       // 2nd argument - element properties
-  //React.createElement('h2', {}, "Let's get started!"),    // 3rd and more arguments - element content
-  //React.createElement(Expenses, { items: expenses})
-  //);
 }
 
 export default App;
-
-// 'App' Component will be a root component, main component in our app.
-// Other components will be nested inside 'App' component or in other components nested in this App component
-
-// In React we buil 'component tree'

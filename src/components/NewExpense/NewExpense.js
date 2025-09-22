@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
@@ -17,7 +17,7 @@ const NewExpense = (props) => {
   const startEditingHandler = () => {
     setIsEditing(true);
   };
-  
+
   const stopEditingHandler = () => {
     setIsEditing(false);
   };
@@ -27,7 +27,10 @@ const NewExpense = (props) => {
       {!isEditing ? (
         <button onClick={startEditingHandler}>Add New Expense</button>
       ) : (
-        <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancel={stopEditingHandler}/>//passing pointer to the function stopEditingHandler
+        <ExpenseForm
+          onSaveExpenseData={saveExpenseDataHandler}
+          onCancel={stopEditingHandler}
+        /> // passing pointer to the function stopEditingHandler
       )}
     </div>
   );

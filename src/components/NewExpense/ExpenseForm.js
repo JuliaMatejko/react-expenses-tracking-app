@@ -7,9 +7,9 @@ const ExpenseForm = (props) => {
   //1.
   //creating multiple variables for storing State values
 
-  const [enteredTitle, setEnteredTitle] = useState(''); // use useState to store value from the event
-  const [enteredAmount, setEnteredAmount] = useState('');
-  const [enteredDate, setEnteredDate] = useState('');
+  const [enteredTitle, setEnteredTitle] = useState(""); // use useState to store value from the event
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
   //2. 3.
   //creating one variable (JS object) for storing multiple State values
@@ -91,9 +91,9 @@ const ExpenseForm = (props) => {
     };
 
     props.onSaveExpenseData(expenseData); //execute function passed in props form NewExpense component
-    setEnteredTitle(''); // using two way binding (value property on the input) I can change state (AFTER SUBMITING CLEARIING THE FORM INPUT FIELDS)
-    setEnteredAmount('');
-    setEnteredDate('');
+    setEnteredTitle(""); // using two way binding (value property on the input) I can change state (AFTER SUBMITING CLEARIING THE FORM INPUT FIELDS)
+    setEnteredAmount("");
+    setEnteredDate("");
   };
 
   return (
@@ -130,34 +130,13 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="button" onClick={props.onCancel}>Cancel</button>
+        <button type="button" onClick={props.onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
   );
-
-  // ALTERNATIVE - using one handler, arrow function invoked
-  // return (
-  //   <form>
-  //     <div className="new-expense__controls">
-  //       <div className="new-expense__control">
-  //           <label>Title</label>
-  //           <input type="text" onChange={(event) => inputChangeHandler('title', event.target.value)} />
-  //       </div>
-  //       <div className="new-expense__control">
-  //           <label>Amount</label>
-  //           <input type="number" min="0.01" step="0.01" onChange={(event) => inputChangeHandler('amount', event.target.value)} />
-  //       </div>
-  //       <div className="new-expense__control">
-  //           <label>Date</label>
-  //           <input type="date" min="2019-01-01" max="2022-12-31" onChange={(event) => inputChangeHandler('date', event.target.value)} />
-  //       </div>
-  //     </div>
-  //     <div className="new-expense__actions">
-  //       <button type="submit">Add Expense</button>
-  //     </div>
-  //   </form>
-  // );
 };
 
 export default ExpenseForm;
